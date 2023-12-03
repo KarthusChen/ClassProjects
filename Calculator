@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+class Calculator
+{
+    public:
+    int getResult(string oper)
+    {
+        if (oper == "+")
+        {
+            return m_Num1+m_Num2;
+        }
+        else if (oper == "-")
+        {
+            return m_Num1-m_Num2;
+        }
+        else if (oper == "*")
+        {
+            return m_Num1 * m_Num2;
+        }
+        else if (oper =="/")
+        {
+            return m_Num1 / m_Num2;
+        }
+        else
+        {
+            cout<<"请输入正确的符号"<<endl;
+            return 1;
+        }
+    }
+
+    Calculator()
+    {
+        cout<<"请输入第一个数字"<<endl;
+        cin>>m_Num1;
+        cout<<"请输入第二个数字"<<endl;
+        cin>>m_Num2;
+    }
+
+    int m_Num1;
+    int m_Num2;
+};
+
+void test01()
+{
+    Calculator C;
+    string oper;
+    int m_Result;
+    cout<<"输入您想运用的四则运算符号"<<endl;
+    cin>>oper;
+    m_Result = C.getResult(oper);
+    cout<<m_Result<<endl;
+}
+
+int main()
+{
+    test01();
+    return 0;
+}
